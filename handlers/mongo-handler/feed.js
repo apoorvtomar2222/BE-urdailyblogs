@@ -7,6 +7,9 @@ var feedSchema = new Schema({
     title:{
         type: String
     },
+    _id:{
+      type: String
+    },
     image:{
         type: String
     },

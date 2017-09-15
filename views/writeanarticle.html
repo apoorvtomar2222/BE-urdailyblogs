@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Write an Article</title>
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <!-- <script src="../public/javascripts/articleFetcher.js"></script>  -->
+    <script>
+        function dataTosave() {
+            var data = CKEDITOR.instances.editor1.getData();
+            var data1 = {
+                "_id": $('#ID').val(),
+                "headerImage": $('#headerImage').val(),
+                "authorPicture": $('#authorPicture').val(),
+                "category": $('#category').val(),
+                "content":data
+            }
+            var img = document.getElementById("headerImage");
+            img.src = event.target.result;
+            
+
+            console.log("Found path is",img.src);
+            console.log("DAta 1",data1);
+                $.post("http://localhost:3000/articles/save/newarticle",
+                    data1, function (data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                    });
+            
+        }
+    </script>
+
+</head>
+
+<body>
+    <br>
+    <form id="articleNewData">
+        <table style="width:100%">
+            <tr>
+                <th>ID</th>
+                <td><input id="ID" type="text" /></td>
+            </tr>
+            <tr>
+                <th>Header Image</th>
+                <td>  <input id="headerImage" type="file" name="pic" accept="image/*">
+                </td>
+            </tr>
+            <tr>
+                <th>Author Picture</th>
+                <td><input id="authorPicture" type="text" /></td>
+            </tr>
+            <th>Category</th>
+            <td><input id="category" type="text" /></td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <textarea name="editor1"></textarea>
+    </form>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+
+    <br>
+    <button onClick="dataTosave()">Submit</button>
+</body>
+
+</html>

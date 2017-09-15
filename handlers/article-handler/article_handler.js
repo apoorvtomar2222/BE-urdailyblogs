@@ -11,6 +11,12 @@ module.exports ={
                 console.log("Article Returned from Data base is",resp);
                 cb(err,resp);
             });
+    },
+
+    "insertArticle":function(data){
+        console.log("data in insert Article",data);
+        var article = new Articles(data);
+        article.save();
     }
 }
 

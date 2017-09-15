@@ -5,15 +5,12 @@ var Schema = mongoose.Schema;
 
 var articleSchema = new Schema({
     _id:{
-        type:String
+        type:String,
     },
     title:{
         type: String
     },
     headerImage:{
-        type: String
-    },
-    feedDescription:{
         type: String
     },
     category:[{

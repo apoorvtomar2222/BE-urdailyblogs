@@ -25,6 +25,9 @@ var feedSchema = new Schema({
     publishedDate:{
       type: String
     },
+    creationDate:{
+      type: String
+    },
     authorPicture:{
       type: String
     },

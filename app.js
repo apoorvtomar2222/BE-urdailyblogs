@@ -17,6 +17,7 @@ var mongoose = require('mongoose');
 //var globalWars = require('./handlers/global-wars');
 
 //Connect to mongobs datbase
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://apoorv:apoorv@ds145997.mlab.com:45997/mydemoproject',{ useMongoClient: true },function(err,db){
     if(err){
         return err;

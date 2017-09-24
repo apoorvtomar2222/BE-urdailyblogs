@@ -11,4 +11,6 @@ articleController.get("/:id",function(req,res){
 
 }) 
 
+articleController.post('/newArticles', articleHandler.postArticle);
+
 module.exports = articleController;

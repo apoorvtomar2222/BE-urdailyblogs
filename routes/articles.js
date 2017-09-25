@@ -48,4 +48,6 @@ articleController.get("/:id",function(req,res){
 //fetching new article end
 
 
+articleController.post('/newArticles', articleHandler.postArticle);
+
 module.exports = articleController;

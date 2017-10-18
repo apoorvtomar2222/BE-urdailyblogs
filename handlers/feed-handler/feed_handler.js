@@ -5,11 +5,17 @@ var Feed = require('../mongo-handler/feed.js');
 
 module.exports = {
 "fetchMegaFeedTestbyCity":function(batchSize,timeOfLastFeedItem,cb){
-    console.log("Function Called fetchMegaFeedTestbyCity",Feed);
+    console.log("Function Called fetchMegaFeedTestbyCity");
     var feed=[];
-  
+
     Feed.find({},function(err,result){
       cb(err,result);
     });
-  }
+  },
+
+"fetchMegaFeedTestbyCityInterest":function(interest,batchSize,timeOfLastFeedItem,cb){
+    Feed.find({category:[interest]},function(err,result){
+        cb(err,result);
+    });
+    }
 };

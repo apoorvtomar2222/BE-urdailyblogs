@@ -14,8 +14,16 @@ module.exports = {
   },
 
 "fetchMegaFeedTestbyCityInterest":function(interest,batchSize,timeOfLastFeedItem,cb){
-    Feed.find({category:[interest]},function(err,result){
-        cb(err,result);
-    });
+    if(category){
+        Feed.find({category:[interest]},function(err,result){
+            cb(err,result);
+        });
+    }
+    else{
+        Feed.find({},function(err,result){
+            cb(err,result);
+          });
+    }
+    
     }
 };

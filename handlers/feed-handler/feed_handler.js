@@ -13,13 +13,13 @@ module.exports = {
     });
   },
 
-"fetchMegaFeedTestbyCityInterest":function(interest,batchSize,timeOfLastFeedItem,cb){
-    if(category){
+"fetchMegaFeedTestbyCityInterest":function(interest,timeOfLastFeedItem,cb){
+    if(interest){
         Feed.find({category:[interest]},function(err,result){
             cb(err,result);
         });
     }
-    else{
+    else if(!interest){
         Feed.find({},function(err,result){
             cb(err,result);
           });

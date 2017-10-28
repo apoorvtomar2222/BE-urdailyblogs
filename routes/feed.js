@@ -17,9 +17,9 @@ feedController.get('/feedtest/:batchSize?', function(req, res, next){
 
 
 
-feedController.get('/feedtestinterest/:interest/:batchSize?', function(req, res, next){
+feedController.get('/feedtestinterest/:interest?', function(req, res, next){
 
-    feedHandler.fetchMegaFeedTestbyCityInterest(req.params.interest,req.params.batchSize, req.params.timeOfLastFeedItem,function(err, resp){
+    feedHandler.fetchMegaFeedTestbyCityInterest(req.params.interest, req.params.timeOfLastFeedItem,function(err, resp){
         console.log("Resp received",resp);
         res.send(resp);
         // if(err){

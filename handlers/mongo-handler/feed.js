@@ -1,11 +1,15 @@
 var mongoose = require('mongoose');
 var globalwars= require('../global-wars/global_wars.js');
 
+
 var Schema = mongoose.Schema;
+var ObjectIdSchema = Schema.ObjectId;
+var ObjectId = mongoose.Types.ObjectId;
 
 var feedSchema = new Schema({
     title:{
-        type: String
+        type: String,
+        default: function () { return new ObjectId()}
     },
     _id:{
       type: String

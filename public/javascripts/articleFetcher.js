@@ -13,7 +13,7 @@ function dataTosave() {
                 category:$('#category').val()
             }
             $("button").click(function(){
-                $.post("http://localhost:3000/articles/save/newarticle",
+                $.post("/articles/save/newarticle",
                 data,function(data,status){
                     alert("Data: " + data + "\nStatus: " + status);
                 });

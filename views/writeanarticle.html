@@ -27,7 +27,7 @@
             }
 
             console.log("DAta 1", data1);
-            $.post("http://localhost:3000/articles/save/newarticle",
+            $.post("/articles/save/newarticle",
                 data1, function (data, status) {
                     alert("Data: " + data + "\nStatus: " + status);
                 });

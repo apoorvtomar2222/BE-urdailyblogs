@@ -10,7 +10,7 @@ articleController.get("/redirect/newarticle",function(req,res){
 }) 
 //creating new article end
 articleController.post("/save/newarticle",function(req,res){
-    console.log("REqqqqqqq",req.body);
+    console.log("Received Date is - ",req.body);
     var authorName =req.body.authorPicture;
     var authorPicture = "https://res.cloudinary.com/apoorvtomar/image/upload/c_fit,h_100,q_45,w_100/v1507466798/"+req.body.authorPicture+ ".jpg";
     var categories=[]
@@ -22,9 +22,11 @@ articleController.post("/save/newarticle",function(req,res){
         "headerImage":req.body.headerImage,
         "categories:":categories,
         "content":req.body.content,
+        "authorName":"Apoorv Tomar",
         "authorPicture":authorPicture
     }
     console.log("Data ",data);
+    
    articleHandler.postArticle(data,authorName);
     //res.sendFile(path.join(__dirname+'/../views/writeanarticle.html'));
 })

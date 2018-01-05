@@ -9,7 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var feed = require('./routes/feed');
 var articles = require('./routes/articles');
-
+var news = require('./routes/news');
 var app = express();
 
 var mongoose = require('mongoose');
@@ -51,7 +51,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/articles', articles);
 app.use('/feed',feed);
-
+app.use('/news',news);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

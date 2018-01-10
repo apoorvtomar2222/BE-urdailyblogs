@@ -9,6 +9,7 @@ module.exports = {
         });
     },
     "saveNews": function (req, res) {
+        console.log('Data ',req.body);
         var news = new News(req.body);
         news.save(function (err) {
             if (err) {

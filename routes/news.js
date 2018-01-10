@@ -5,6 +5,6 @@ var NewsHandler =  require('../handlers/news-handler/news_handler');
 
 newsController.get('/',NewsHandler.getNews);
 
-newsController.post('/save/newarticle',NewsHandler.saveNews);
+newsController.post('/save/savenews',NewsHandler.saveNews);
 
  module.exports = newsController;

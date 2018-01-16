@@ -16,6 +16,7 @@ module.exports = {
                 console.log(err);
             } else {
                 console.log('meow');
+                res.send('done');
             }
         });
     }

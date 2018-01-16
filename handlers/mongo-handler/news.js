@@ -15,6 +15,9 @@ var newsSchema = new Schema({
     content:{
         type: String
     },
+    contentFeed:{
+        type: String
+    },
     author:{
       type: String
     },
